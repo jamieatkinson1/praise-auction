@@ -1,4 +1,4 @@
-// File: C:\Projects\praise-auction-v2\praise-auction\app\layout.tsx
+// File: C:\Projects\praise-auction-v2\praise-auction\src\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

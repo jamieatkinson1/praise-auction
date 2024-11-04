@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
-import { ScrollArea } from "../components/ui/scroll-area"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 interface Announcement {
   id: string
@@ -13,7 +13,7 @@ interface Announcement {
 }
 
 export function StudentAnnouncements() {
-  const [announcements] = useState<Announcement[]>([
+  const [announcements, setAnnouncements] = useState<Announcement[]>([
     {
       id: '1',
       title: 'New Prizes Added!',
@@ -27,8 +27,17 @@ export function StudentAnnouncements() {
       message: 'The end of term auction will begin next week. Get your points ready!',
       date: '2024-03-19',
       isRead: true
-    }
+    },
+    // Add more mock announcements
   ])
+
+  const markAsRead = (id: string) => {
+    setAnnouncements(announcements.map(announcement => 
+      announcement.id === id 
+        ? { ...announcement, isRead: true }
+        : announcement
+    ))
+  }
 
   return (
     <Card>
@@ -42,6 +51,7 @@ export function StudentAnnouncements() {
             <Card 
               key={announcement.id} 
               className={`mb-4 ${!announcement.isRead ? 'border-blue-500' : ''}`}
+              onClick={() => markAsRead(announcement.id)}
             >
               <CardHeader>
                 <div className="flex justify-between items-center">

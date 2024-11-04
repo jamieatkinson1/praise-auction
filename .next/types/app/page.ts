@@ -1,4 +1,4 @@
-// File: C:\Projects\praise-auction-v2\praise-auction\app\page.tsx
+// File: C:\Projects\praise-auction-v2\praise-auction\src\app\page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

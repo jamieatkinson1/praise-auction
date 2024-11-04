@@ -8,13 +8,15 @@ datasource db {
 }
 
 model User {
-  id       String  @id @default(cuid())
-  username String  @unique
-  password String
-  name     String
-  role     String
-  email    String?
-  bids     Bid[]
+  id        String  @id @default(cuid())
+  username  String  @unique
+  password  String
+  firstName String
+  lastName  String
+  name      String
+  role      String
+  email     String?
+  bids      Bid[]
 }
 
 model Prize {
